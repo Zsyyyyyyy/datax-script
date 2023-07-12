@@ -1,0 +1,31 @@
+_id,String,服务商品id
+title,String,商品标题
+description,String,商品描述
+productCategory,ProductCategory,服务商品分类
+shopCustomCategory,ShopCustomCategory,店铺自定义分类
+shop,Shop,商品所在店铺
+productTags,List,商品标签列表
+productPictureProductObjectStorags,List,商品展示图片列表
+productDetailText,String,商品详情文本
+productDetailObjectStorages,List,商品详情列表，图片或者视频
+buyNotes,String,购买须知
+reservationNotes,String,预约须知
+expiryDate,Integer,有效期 单位：天
+sn,Integer,店铺内排序
+saleState,SaleState,商品销售状态【上架、下架】
+putOnSaleDate,LocalDateTime,商品上架时间
+auditState,AuditState,审核状态
+approvedDate,LocalDateTime,审核通过时间
+createDate,LocalDateTime,创建日期
+updateDate,LocalDateTime,修改日期
+delFlag,Boolean,逻辑删除标签 false:未删除，true:已删除
+serviceAdaptation,ServiceAdaptation,服务商品个性化属性
+serviceAttribute,ServiceAttribute,服务商品附加属性
+geoJsonPoint,GeoJsonPoint,None
+brandSnapshot,BrandSnapshot,品牌快照
+purchaseRules,PurchaseRules,购买规则
+purchaseRestrictions,PurchaseRestrictions,购买限制
+specialOfferState,SpecialOfferState,特惠状态
+reviewReason,String,待复核原因
+kindTips,String,温馨提示
+productSortInfo,ProductSortInfo,排序信息

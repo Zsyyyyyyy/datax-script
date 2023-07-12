@@ -1,0 +1,145 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select id,uid,user_id,id_no,nick_name,avatar_url,sex,birth,arrival_time,death_time,sort,pet_file,pet_file_type,category_id,category_name,pet_status,vaccin_status,deworm_status,sterilization_status,delete_flag,create_time,update_time from $table_name where update_time < '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "t_pet",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "uid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "nick_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "avatar_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sex",
+                                "type": "string"
+                            },
+                            {
+                                "name": "birth",
+                                "type": "string"
+                            },
+                            {
+                                "name": "arrival_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "death_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sort",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_file",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_file_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "category_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "category_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "vaccin_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "deworm_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sterilization_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delete_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "t_pet",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/t_pet/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

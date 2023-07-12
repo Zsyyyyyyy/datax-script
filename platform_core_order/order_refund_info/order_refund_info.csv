@@ -1,0 +1,34 @@
+_id,String,订单退款id
+refundOrderNo,String,退款订单编号
+orderNo,String,订单编号
+afterSaleNo,String,售后单号
+payOrderNo,String,支付订单编号
+orderType,String,订单类型，GENERAL_ORDER：普通商品订单，SERVICE_ORDER：服务商品订单
+refundStatus,String,退款状态，10：未退款，20：受理中，30：退款成功，40：退款失败
+payUserId,String,支付用户id
+payUserWalletId,String,支付用户钱包id
+payUserName,String,支付用户名称
+merchantId,String,商户id
+merchantUserId,String,商家用户id
+merchantWalletId,String,商家钱包id
+chainShopWalletId,String,连锁店铺钱包id 只有在连锁店铺下单时 才有该字段
+merchantContractNo,String,商家三方账户号
+shopId,String,店铺id
+payType,String,支付方式，WX：微信，ZFB：支付宝
+payServiceType,String,支付业务类型: WECHAT_JSGZH:微信公众号支付， WECHAT_JSXCX:微信小程序支付， ALIPAY_A
+gatePaySerialNo,String,第三方支付流水单号
+gateRefundNo,String,第三方退款单号
+orderAmount,BigDecimal,订单交易金额
+refundAmount,BigDecimal,退款金额
+marketingRefundAmount,BigDecimal,营销退款金额
+gateRefundAmount,BigDecimal,三方退款金额
+refundApplyUser,String,退款申请人
+refundSource,String,退款来源
+fullRefundFlag,String,全额退款标志，1：完整退款，2：非完整退款
+refundReason,String,退款原因
+marketingAmount,BigDecimal,None
+totalMarketingAmount,BigDecimal,None
+marketingInfos,List,None
+refundCompleteTime,LocalDateTime,退款完成时间
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间

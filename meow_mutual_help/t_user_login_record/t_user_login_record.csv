@@ -1,0 +1,6 @@
+id,bigint(20),主键id
+uid,bigint(20),用户id
+date,varchar(20),日期
+lon,"decimal(10,7)",登录位置经度
+lat,"decimal(10,7)",登录位置维度
+create_time,datetime,创建/登录时间

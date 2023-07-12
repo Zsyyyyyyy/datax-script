@@ -1,0 +1,12 @@
+_id,ObjectId,None
+feedId,String,None
+collectCount,Long,None
+likeCount,Long,None
+fakeLikeCount,Long,None
+viewCount,Long,None
+fakeViewCount,Long,None
+commentCount,Long,None
+replyCount,Long,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None
+oldId,String,None

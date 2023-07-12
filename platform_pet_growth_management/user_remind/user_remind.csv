@@ -1,0 +1,29 @@
+_id,String,None
+type,String,类型：系统提醒-SYSTEM、用户自定义提醒：USER
+userId,String,提醒用户id
+petId,String,宠物id
+title,String,提醒标题
+templateId,String,系统提醒模版 id（为系统提醒时必须）
+openStatus,Boolean,关闭状态 true开启 false关闭
+remindCycleType,String,提醒周期类型：仅一次-ONCE、每天-DAY、每周-WEED、每月-MONTH、每年-YEAR、自定义天数-CUSTOM
+remindCycleDays,Integer,自定义提醒周期（天数）
+remindTime,LocalDateTime,计划时间
+nextRemindTime,LocalDateTime,下次计划时间
+firstDesc,String,首次预设文案
+guideDesc,String,提醒引导文案
+shareDesc,String,相关小贴士
+firstRemindDays,Integer,首次提醒天数
+marketingDesc,String,营销文案
+jumpUrl,String,跳转链接
+eventId,String,事件Id 纪念日对应的事件记录表Id
+remindNumber,Integer,提醒次数
+specialMark,String,特殊标志
+sn,Integer,等级 1代表S 2代表A 3代表B
+notice,Boolean,是否通知
+noticeAdvanceDays,Integer,通知提前天数（0-当天，1-提前1天，2-提前2天，3-提前三天）
+noticeTime,LocalDateTime,通知时间
+nextNoticeTime,LocalDateTime,下次通知时间
+editFlag,Boolean,是否编辑过
+delFlag,Boolean,删除标识
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间

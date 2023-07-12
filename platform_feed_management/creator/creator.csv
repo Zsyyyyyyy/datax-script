@@ -1,0 +1,10 @@
+_id,ObjectId,ID
+userId,String,用户ID
+userName,String,用户昵称
+userPhone,String,用户手机号
+userType,Integer,用户类型， 参考um_user 表 user_type字段
+createTime,LocalDateTime,通过时间
+totalRevenue,BigDecimal,累计收益
+totalRedeemed,BigDecimal,已兑换余额
+privilegesStatus,CreatorPrivilegesStatus,权益状态
+updateTime,LocalDateTime,更新时间

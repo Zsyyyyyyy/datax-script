@@ -1,0 +1,22 @@
+id,bigint(20),
+uid,bigint(20),用户oldUserId
+user_id,bigint(20),用户id
+id_no,varchar(64),宠物身份证号
+nick_name,varchar(40),宠物昵称
+avatar_url,varchar(255),宠物头像url
+sex,int(11),"1=GG,2=MM,3=绝育GG,4=绝育MM"
+birth,varchar(10),宠物生日
+arrival_time,datetime,宠物到家日期
+death_time,datetime,宠物死亡时间
+sort,int(11),排序
+pet_file,varchar(255),宠物文件
+pet_file_type,int(11),宠物文件类型  0-视频，1-照片
+category_id,bigint(20),宠物分类
+category_name,varchar(255),宠物分类名称
+pet_status,int(11),"0=正常,1=找领养,2=被领养,3=已走失,4=找对象,5=回母星"
+vaccin_status,bit(1),"疫苗状态:0=未完成,1=已完成"
+deworm_status,bit(1),驱虫状态
+sterilization_status,tinyint(1),绝育状态(0-未知;1-未绝育;2-已绝育)
+delete_flag,int(11),"0=未删除,1=已删除"
+create_time,datetime,创建时间
+update_time,datetime,更新时间

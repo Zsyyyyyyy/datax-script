@@ -1,0 +1,28 @@
+user_id,bigint(20),用户id
+real_name,varchar(32),真实姓名
+id_no,varchar(32),证件号码
+id_type,smallint(6),证件类型 1 身份证号
+auth_type,smallint(6),类型 1 个人认证 2 商家认证
+hand_id_url,varchar(255),手持身份证照片url
+id_front_url,varchar(255),个人手持身份证(正面)
+id_back_url,varchar(255),个人手持身份证(反面)
+lon,"decimal(10,7)",经度
+lat,"decimal(10,7)",纬度
+province,varchar(32),省
+province_code,smallint(6),省代码
+city,varchar(32),市
+city_code,smallint(6),市代码
+county,varchar(32),县
+county_code,smallint(6),县代码
+geohash,varchar(32),区域编码
+area_code,varchar(16),区域代码
+address,varchar(255),详细地址
+auth_status,smallint(6),认证状态 0-未认证 1认证中 2认证成功 3认证失败 5身份证重新认证成功 10重新认证成功
+fail_reason,varchar(16),失败原因   100001--人脸识别不通过
+create_time,datetime,新增时间
+update_time,datetime,修改时间
+del_flag,tinyint(1),逻辑删除 0--未删除 1--已删除
+mig_flag,tinyint(1),迁移数据标识  0--老表数据  1--新表数据
+sex,tinyint(1),身份证性别 1男2女
+change_bind_flag,tinyint(1),换绑标识 0--未换绑 1--已换绑
+certificate_validity,date,证件有效期

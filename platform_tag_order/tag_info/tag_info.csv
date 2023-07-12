@@ -1,0 +1,12 @@
+_id,Long,None
+tagName,String,None
+tagIcon,String,None
+sort,Integer,None
+tagCategoryId,Long,None
+tagCategoryName,String,None
+releaseStatus,Integer,None
+isOperation,Integer,None
+creator,String,None
+delFlag,Boolean,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None

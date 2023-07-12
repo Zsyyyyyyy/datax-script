@@ -1,0 +1,29 @@
+agent_partner_user_id,bigint(20),主键(雪花算法)
+phone,varchar(16),手机号（登录）
+real_name,varchar(32),真实姓名
+nickname,varchar(128),昵称
+partner_password,varchar(64),密码
+avatar,varchar(255),用户头像地址
+age,smallint(6),年龄
+email,varchar(128),邮箱
+gender,tinyint(1),性别 1：男 2：女 3：其他
+idcard_no,varchar(32),身份证号码
+idcard_front_url,varchar(255),身份证正面url
+idcard_back_url,varchar(255),身份证反面url
+province,varchar(32),代理人所在省
+province_code,int(11),代理人所在省code
+city,varchar(32),代理人所在市
+city_code,int(11),代理人所在市code
+county,varchar(32),代理人所在区县
+county_code,int(11),代理人所在区县code
+region,varchar(32),已废除;当前属于哪个level，就存对应的区域，eg:level=2，取值 邯郸市
+partner_level,tinyint(1),代理商级别 1：省级 2：市级 3：区县级
+partner_source,tinyint(1),账号来源 1：管理后台系统创建 2：代理商后台系统创建
+partner_status,tinyint(1),账号状态 1：正常 2：停用
+login_ip,varchar(40),最后登录ip（登录时候进行维护）
+login_time,datetime,最后登录时间
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+create_time,datetime,创建时间
+update_time,datetime,修改时间
+create_user,varchar(32),
+update_user,varchar(32),

@@ -1,0 +1,229 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select merchant_id,user_id,merchant_name,avatar_url,background_pic_url,description,company_name,business_license_url,usci,legal_person_name,idcard_no,lon,lat,geohash,province,province_code,city,city_code,county,county_code,AdministrativeDivisionsCode,address,service_tel,merchant_status,merchant_type,audit_status,del_flag,create_time,create_user,update_time,update_user,idcard_front_img_url,idcard_back_img_url,remark,audit_time,partner_id,old_merchant_id,merchant_account_type,register_operate_source,register_operate_user,register_operate_time,register_reason,head_shop_id from $table_name where update_time < '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "tb_merchant",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "merchant_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchant_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "avatar_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "background_pic_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "company_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "business_license_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "usci",
+                                "type": "string"
+                            },
+                            {
+                                "name": "legal_person_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lon",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lat",
+                                "type": "string"
+                            },
+                            {
+                                "name": "geohash",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "AdministrativeDivisionsCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "service_tel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchant_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchant_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "audit_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_user",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_user",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_front_img_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_back_img_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "remark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "audit_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partner_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "old_merchant_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchant_account_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "register_operate_source",
+                                "type": "string"
+                            },
+                            {
+                                "name": "register_operate_user",
+                                "type": "string"
+                            },
+                            {
+                                "name": "register_operate_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "register_reason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "head_shop_id",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "tb_merchant",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/tb_merchant/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

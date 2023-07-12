@@ -1,0 +1,19 @@
+id,bigint(20),主键
+active_code,varchar(30),活动code
+activity_type,varchar(30),"NORMAL 普通邀请助力
+INVITE_NEW 拉新邀请"
+inviter_user_id,bigint(20),邀请人用户id
+inviter_user_phone,varchar(16),邀请人手机号
+inviter_code,varchar(16),邀请人邀请码
+invitee_user_id,bigint(20),被邀请人用户id
+invitee_user_phone,varchar(16),被邀请人手机号
+invitee_code,varchar(16),被邀请人邀请码
+invitee_nick_name,varchar(64),被邀请人昵称
+invitee_avatar_url,varchar(255),被邀请人头图
+reg_platform,tinyint(2),注册手机平台 0 安卓 1 ios 3PC 4小程序 5H5 99其他
+invite_channel,int(5),邀请渠道
+create_time,datetime,创建时间
+update_time,datetime,修改时间
+covered,tinyint(1),是否覆盖了；0没有；H5注册APP登录后，需要将用户信息同步到um_user
+device_id,varchar(100),设备号
+effectived,tinyint(1),是否有效。0待生效、1有效、2设备号达到上限、3被邀请手机号存在注销记录

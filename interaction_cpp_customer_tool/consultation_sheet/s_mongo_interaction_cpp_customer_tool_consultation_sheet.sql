@@ -1,0 +1,32 @@
+create table if not exists s_mongo_interaction_cpp_customer_tool_consultation_sheet (
+    id string comment 'None'
+    ,userInfo string comment 'None'
+    ,doctorUserInfo string comment 'None'
+    ,parentConsultationSheetId string comment 'None'
+    ,couponNo string comment 'None'
+    ,groupId string comment 'None'
+    ,preFilledInfo string comment 'None'
+    ,source string comment 'None'
+    ,inquiryType string comment 'None'
+    ,state string comment 'None'
+    ,endType string comment 'None'
+    ,replyState string comment 'None'
+    ,commentInfo string comment 'None'
+    ,userImpression string comment 'None'
+    ,tags string comment 'None'
+    ,symptomType string comment 'None'
+    ,receptionTime string comment 'None'
+    ,responseTime string comment 'None'
+    ,endTime string comment 'None'
+    ,appealInfo string comment 'None'
+    ,stage string comment 'None'
+    ,followUpStatus string comment 'None'
+    ,diagnosisStatus string comment 'None'
+    ,createTime string comment 'None'
+    ,updateTime string comment 'None'
+    ,delFlag string comment 'None'
+) comment '' 
+stored as parquet
+tblproperties ('parquet.compression' = 'snappy');
+
+load data inpath '/cpp_data/mongo/interaction_cpp_customer_tool/consultation_sheet/full' overwrite into table s_mongo_interaction_cpp_customer_tool_consultation_sheet partition(ds = '$(date)s'); 

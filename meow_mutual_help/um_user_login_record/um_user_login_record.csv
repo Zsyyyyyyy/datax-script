@@ -1,0 +1,12 @@
+id,bigint(20),id
+user_id,bigint(20),用户id
+login_type,tinyint(1),登录类型，1 登录  2 唤醒app
+login_day,varchar(16),登录日期  yyyy-MM-dd
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+ip,int(10) unsigned,ip地址
+attribution_province,varchar(20),ip省份
+attribution_city,varchar(20),ip城市
+create_time,datetime,创建时间
+update_time,datetime,修改时间
+attribution_province_code,varchar(20),省份编码
+attribution_city_code,varchar(20),城市编码

@@ -1,0 +1,163 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select id,order_no,user_id,origin_score,pay_score,pay_type,status,receiver_name,receiver_phone,receiver_province,receiver_province_code,receiver_city,receiver_city_code,receiver_county,receiver_county_code,receiver_address,place_order_time_day,place_order_time,close_reason,remark,is_return,del_flag,create_time,update_time from $table_name"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "um_score_order",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "order_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "origin_score",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pay_score",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pay_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_phone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_province_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_city_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_county",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_county_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receiver_address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "place_order_time_day",
+                                "type": "string"
+                            },
+                            {
+                                "name": "place_order_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "close_reason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "remark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "is_return",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "um_score_order",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/um_score_order/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 2
+            }
+        }
+    },
+    "core": {
+        "transport": {
+            "channel": {
+                "speed": {
+                    "record": 20000,
+                    "byte": 2097152
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+create table if not exists s_mysql_meow_mutual_help_um_user_certification (
+    id string comment '用户id'
+    ,real_name string comment '真实姓名'
+    ,id_no string comment '证件号码'
+    ,id_type string comment '证件类型 1 身份证号'
+    ,auth_type string comment '类型 1 个人认证 2 商家认证'
+    ,hand_id_url string comment '手持身份证照片url'
+    ,id_front_url string comment '个人手持身份证(正面)'
+    ,id_back_url string comment '个人手持身份证(反面)'
+    ,lon string comment '经度'
+    ,lat string comment '纬度'
+    ,province string comment '省'
+    ,province_code string comment '省代码'
+    ,city string comment '市'
+    ,city_code string comment '市代码'
+    ,county string comment '县'
+    ,county_code string comment '县代码'
+    ,geohash string comment '区域编码'
+    ,area_code string comment '区域代码'
+    ,address string comment '详细地址'
+    ,auth_status string comment '认证状态 0-未认证 1认证中 2认证成功 3认证失败 5身份证重新认证成功 10重新认证成功'
+    ,fail_reason string comment '失败原因   100001--人脸识别不通过'
+    ,create_time string comment '新增时间'
+    ,update_time string comment '修改时间'
+    ,del_flag string comment '逻辑删除 0--未删除 1--已删除'
+    ,mig_flag string comment '迁移数据标识  0--老表数据  1--新表数据'
+    ,sex string comment '身份证性别 1男2女'
+    ,change_bind_flag string comment '换绑标识 0--未换绑 1--已换绑'
+    ,certificate_validity string comment '证件有效期'
+) comment '' 
+partitioned by (ds string comment 'yyyyMMdd') 
+stored as parquet
+tblproperties ('parquet.compression' = 'snappy');
+
+load data inpath '/cpp_data/mysql/meow_mutual_help/um_user_certification/full' overwrite into table s_mysql_meow_mutual_help_um_user_certification partition(ds = '$(date)s'); 

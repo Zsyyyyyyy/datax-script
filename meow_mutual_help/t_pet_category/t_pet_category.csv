@@ -1,0 +1,11 @@
+id,bigint(20),主键ID
+pic,varchar(255),分类图片
+name,varchar(255),分类名称
+initials,varchar(4),分类名称首字母
+parent_id,bigint(20),父级ID
+top,bit(1),
+start_weight,"decimal(10,2)",体重开始
+end_weight,"decimal(10,2)",体重结束
+image,varchar(512),品种形象图片
+create_time,datetime,创建时间
+update_time,datetime,更新时间

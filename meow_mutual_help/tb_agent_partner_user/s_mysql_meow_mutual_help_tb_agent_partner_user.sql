@@ -1,0 +1,36 @@
+create table if not exists s_mysql_meow_mutual_help_tb_agent_partner_user (
+    id string comment '主键(雪花算法)'
+    ,phone string comment '手机号（登录）'
+    ,real_name string comment '真实姓名'
+    ,nickname string comment '昵称'
+    ,partner_password string comment '密码'
+    ,avatar string comment '用户头像地址'
+    ,age string comment '年龄'
+    ,email string comment '邮箱'
+    ,gender string comment '性别 1：男 2：女 3：其他'
+    ,idcard_no string comment '身份证号码'
+    ,idcard_front_url string comment '身份证正面url'
+    ,idcard_back_url string comment '身份证反面url'
+    ,province string comment '代理人所在省'
+    ,province_code string comment '代理人所在省code'
+    ,city string comment '代理人所在市'
+    ,city_code string comment '代理人所在市code'
+    ,county string comment '代理人所在区县'
+    ,county_code string comment '代理人所在区县code'
+    ,region string comment '已废除;当前属于哪个level，就存对应的区域，eg:level=2，取值 邯郸市'
+    ,partner_level string comment '代理商级别 1：省级 2：市级 3：区县级'
+    ,partner_source string comment '账号来源 1：管理后台系统创建 2：代理商后台系统创建'
+    ,partner_status string comment '账号状态 1：正常 2：停用'
+    ,login_ip string comment '最后登录ip（登录时候进行维护）'
+    ,login_time string comment '最后登录时间'
+    ,del_flag string comment '删除表示 1：删除 0：未删除'
+    ,create_time string comment '创建时间'
+    ,update_time string comment '修改时间'
+    ,create_user string comment 'nan'
+    ,update_user string comment 'nan'
+) comment '' 
+partitioned by (ds string comment 'yyyyMMdd') 
+stored as parquet
+tblproperties ('parquet.compression' = 'snappy');
+
+load data inpath '/cpp_data/mysql/meow_mutual_help/tb_agent_partner_user/full' overwrite into table s_mysql_meow_mutual_help_tb_agent_partner_user partition(ds = '$(date)s'); 

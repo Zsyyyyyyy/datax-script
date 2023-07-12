@@ -1,0 +1,33 @@
+create table if not exists s_mongo_bi_live_commenting_score_commenting (
+    id string comment 'id'
+    ,sourceType string comment '数据类型 （动态、商品订单、服务订单）'
+    ,sourceId string comment '来源id （动态的id、商品订单id、服务订单id）'
+    ,anonymity string comment '是否匿名'
+    ,sourceUserId string comment '发表评论人id'
+    ,sourceUserAvatar string comment '发表评论人头像'
+    ,sourceUserNick string comment '发表评论人昵称'
+    ,content string comment '发表评论内容'
+    ,imageList string comment '图片列表'
+    ,videoList string comment '视频列表'
+    ,createTime string comment '发表时间'
+    ,updateTime string comment '更新时间'
+    ,auditType string comment '审核类型（机审、人工审核）'
+    ,auditState string comment '审核状态 (审核中、审核失败、审核成功)'
+    ,complaintState string comment '申诉状态（申诉中、申诉失败、申诉成功）'
+    ,delFlag string comment 'delFlag'
+    ,sticky string comment '是否置顶'
+    ,stickyDateTime string comment '置顶时间'
+    ,quality string comment '是否优质'
+    ,extra string comment '扩展字段'
+    ,commentReplies string comment '评论回复列表'
+    ,oldId string comment '老数据ID'
+    ,authorComment string comment '是否是作者自己的一级评论'
+    ,authorInteractComment string comment '作者参与回复或点赞的评论'
+    ,authorReplyComment string comment '作者回复过的评论'
+    ,authorLikeComment string comment '作者点赞过的评论'
+    ,likeCount string comment '点赞数量'
+) comment '' 
+stored as parquet
+tblproperties ('parquet.compression' = 'snappy');
+
+load data inpath '/cpp_data/mongo/bi_live_commenting_score/commenting/full' overwrite into table s_mongo_bi_live_commenting_score_commenting partition(ds = '$(date)s'); 

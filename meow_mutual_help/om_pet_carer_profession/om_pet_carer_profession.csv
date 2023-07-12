@@ -1,0 +1,11 @@
+pet_carer_profession_id,bigint(20),id
+pet_carer_id,bigint(20),宠X师id
+dic_profession_id,bigint(20),外键-字典职业id
+dic_profession_garde_id,bigint(20),外键-字典职业等级id
+profession_garde_type,varchar(10),等级;ORDINARY=普通;SENIOR=高级;SUPER=特级
+auth_status,varchar(100),审核状态;PENDING_AUTH=待审核;AUTH_FAILED=审核未通过;AUTH_PASSED=审核通过
+auth_pass_time,datetime,审核通过时间
+effective_status,varchar(100),影响状态
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+create_time,datetime,创建时间
+update_time,datetime,修改时间

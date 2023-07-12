@@ -1,0 +1,177 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select pet_carer_id,user_id,user_address_id,pet_carer_no,pet_carer_nickname,pet_carer_start_work_time,pet_carer_start_feed_time,pet_carer_rate,pet_carer_sale,pet_carer_description,pet_carer_telephone,province_code,city_code,county_code,lon,lat,del_flag,create_time,update_time,province,city,county,address,service_scope,long_journey_money,recommend,recommend_start_time,recommend_effective_distancee,recommend_end_time,recommend_effective_distance from $table_name where update_time > '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "om_pet_carer",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "pet_carer_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "user_address_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_nickname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_start_work_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_start_feed_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_rate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_sale",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_telephone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lon",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lat",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county",
+                                "type": "string"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "service_scope",
+                                "type": "string"
+                            },
+                            {
+                                "name": "long_journey_money",
+                                "type": "string"
+                            },
+                            {
+                                "name": "recommend",
+                                "type": "string"
+                            },
+                            {
+                                "name": "recommend_start_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "recommend_effective_distancee",
+                                "type": "string"
+                            },
+                            {
+                                "name": "recommend_end_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "recommend_effective_distance",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "om_pet_carer",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/om_pet_carer/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

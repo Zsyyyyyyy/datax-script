@@ -1,0 +1,824 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader",
+                    "parameter": {
+                        "address": [
+                            "$mongodburl"
+                        ],
+                        "collectionName": "equity_order_info",
+                        "authDb": "admin",
+                        "query": "{ 'updateTime' : { $lt: new Date($yyyy,$MM,$dd,$HH) }}",
+                        "column": [
+                            {
+                                "name": "_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "version",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "businessIdentifier",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "subOrderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantPhone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantLevel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderChannel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingAddress",
+                                "type": "string"
+                            },
+                            {
+                                "name": "logisticsCompanyName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "logisticsNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "countryCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "provinceCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cityCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "countyCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "subdistrictCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shipTo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shipToPhoneNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "totalPrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reduceAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "couponInfos",
+                                "type": "string"
+                            },
+                            {
+                                "name": "promotionInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "deductionAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingFee",
+                                "type": "string"
+                            },
+                            {
+                                "name": "transactionNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userRemark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userReservedMobile",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantRemark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "commentStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "isRefund",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userCancelReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantCancelReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userDeleteFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantDeleteFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCancelTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderPayTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderReceiveTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantConfirmTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderDeliveryTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCloseTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCompleteTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderRefundTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderItemList",
+                                "type": "string"
+                            },
+                            {
+                                "name": "verifyBrand",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shop",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedShopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedShopName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "petsNumber",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServicePrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServiceDistance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServicePets",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServiceDistance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServiceDistancePrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServicePetsPrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "categoryId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "settlementCycle",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitFailReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitCallbackTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "newCustomerOrder",
+                                "type": "string"
+                            },
+                            {
+                                "name": "verifyTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "scene",
+                                "type": "string"
+                            },
+                            {
+                                "name": "consignmentTaskId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "effectiveTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "taskCreatorId",
+                                "type": "string"
+                            }
+                        ],
+                        "dbName": "platform_core_order",
+                        "userName": "$mongodbusername",
+                        "userPassword": "$mongodbpassword"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "version",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "businessIdentifier",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "subOrderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantPhone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantLevel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userAvatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderChannel",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingAddress",
+                                "type": "string"
+                            },
+                            {
+                                "name": "logisticsCompanyName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "logisticsNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "countryCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "provinceCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cityCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "countyCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "subdistrictCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shipTo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shipToPhoneNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "totalPrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reduceAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "couponInfos",
+                                "type": "string"
+                            },
+                            {
+                                "name": "promotionInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "deductionAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shippingFee",
+                                "type": "string"
+                            },
+                            {
+                                "name": "transactionNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userRemark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userReservedMobile",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantRemark",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "commentStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "isRefund",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userCancelReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantCancelReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userDeleteFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantDeleteFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCancelTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderPayTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderReceiveTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantConfirmTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderDeliveryTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCloseTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderCompleteTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderRefundTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderItemList",
+                                "type": "string"
+                            },
+                            {
+                                "name": "verifyBrand",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shop",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedShopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedShopName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "petsNumber",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServicePrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServiceDistance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "baseServicePets",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServiceDistance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServiceDistancePrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "overServicePetsPrice",
+                                "type": "string"
+                            },
+                            {
+                                "name": "categoryId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "affiliatedUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "settlementCycle",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitFailReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "splitCallbackTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "newCustomerOrder",
+                                "type": "string"
+                            },
+                            {
+                                "name": "verifyTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "scene",
+                                "type": "string"
+                            },
+                            {
+                                "name": "consignmentTaskId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeCode",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "effectiveTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "exchangeTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "taskCreatorId",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "equity_order_info",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mongo/platform_core_order/equity_order_info/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 2
+            }
+        }
+    },
+    "core": {
+        "transport": {
+            "channel": {
+                "speed": {
+                    "record": 20000,
+                    "byte": 2097152
+                }
+            }
+        }
+    }
+}

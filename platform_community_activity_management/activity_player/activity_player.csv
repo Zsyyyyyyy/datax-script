@@ -1,0 +1,24 @@
+_id,ObjectId,主键ID
+userId,String,用户ID
+userName,String,用户昵称
+userAvatar,String,用户头像
+activityId,ObjectId,参与活动ID
+identityType,Integer,"用户身份
+   
+    @see com.meow.platform.enums.community_activity"
+delFlag,Boolean,删除标识
+cancelReason,String,取消原因
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间
+orderNo,String,订单号
+isPayment,Boolean,是否已支付
+verifyType,String,核销类型 {@link com.meow.platform.enums.order.VerifyMode}
+verifyStatus,String,核销状态 {@link com.meow.platform.enums.order.VerifyStatus}
+verifyTime,LocalDateTime,核销时间
+isAffirm,Boolean,是否已确认
+realName,String,参与人姓名
+phone,String,参与人手机号
+channel,String,报名渠道
+formExtend,String,表单扩展字段
+skuId,String,None
+ticketId,String,None

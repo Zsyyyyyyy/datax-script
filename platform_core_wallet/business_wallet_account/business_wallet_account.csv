@@ -1,0 +1,21 @@
+_id,ObjectId,None
+userId,String,None
+contractNo,String,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None
+accountStatus,Integer,None
+bindCardStatus,Integer,None
+passwordStatus,String,None
+parentWalletId,ObjectId,None
+openAccountInfo,OpenAccountInfo,None
+completeTime,LocalDateTime,None
+subjectChangeFlag,Integer,None
+shopId,String,店铺id
+parentShopId,String,总店id
+accountMode,String,"分账模式
+   
+    @see com.meow.platform.constants.wallet.busines"
+accountType,String,"钱包店铺类型
+   
+    @see com.meow.platform.constants.wallet.busin"
+logoffStatus,Integer,None

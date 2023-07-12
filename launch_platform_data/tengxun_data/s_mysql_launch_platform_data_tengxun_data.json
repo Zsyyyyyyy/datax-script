@@ -1,0 +1,105 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select account_id,fund_type,time,date,deposit,paid,trans_in,trans_out,credit_modify,balance,preauth_balance,ts from $table_name where update_time < '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "tengxun_data",
+                        "dbName": "launch_platform_data"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "account_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "fund_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "date",
+                                "type": "string"
+                            },
+                            {
+                                "name": "deposit",
+                                "type": "string"
+                            },
+                            {
+                                "name": "paid",
+                                "type": "string"
+                            },
+                            {
+                                "name": "trans_in",
+                                "type": "string"
+                            },
+                            {
+                                "name": "trans_out",
+                                "type": "string"
+                            },
+                            {
+                                "name": "credit_modify",
+                                "type": "string"
+                            },
+                            {
+                                "name": "balance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "preauth_balance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "ts",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "tengxun_data",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/launch_platform_data/tengxun_data/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

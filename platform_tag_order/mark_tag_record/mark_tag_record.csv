@@ -1,0 +1,8 @@
+_id,Long,None
+tagId,Long,None
+businessType,Integer,@see com.meow.platform.tag.enums.MarkTagBizTypeEnum
+businessId,String,None
+creator,String,None
+delFlag,Boolean,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None

@@ -1,0 +1,23 @@
+_id,String,活动id
+activityName,String,活动名称
+coverUrl,String,活动封面图
+description,String,活动描述
+tags,List,活动标签集合
+activityLocation,ActivityLocation,活动地址
+startTime,LocalDateTime,活动开始时间
+endTime,LocalDateTime,活动结束时间
+quantityLimit,Integer,活动人数限制
+quantity,Integer,活动参与人数
+badge,String,json数组记录
+groupId,String,冗余的群聊Id
+activityStatus,String,"活动状态 UP_SHELF:上架 UN_SHELF:下架 FINISHED:结束 {@link
+    com.meow"
+auditStatus,String,"审核状态 PENDING:待审核 REJECTED:审核驳回 SUCCESS:审核通过 {@link
+    com.m"
+signUpUsers,List,报名人列表
+sn,Long,排序权重
+activityOwner,ActivityUserInfo,创建人信息
+delFlag,Boolean,逻辑删除标识
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,修改时间
+activityObjectStorages,List,活动图片

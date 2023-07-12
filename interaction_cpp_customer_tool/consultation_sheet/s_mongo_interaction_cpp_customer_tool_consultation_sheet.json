@@ -1,0 +1,272 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader",
+                    "parameter": {
+                        "address": [
+                            "$mongodburl"
+                        ],
+                        "collectionName": "consultation_sheet",
+                        "authDb": "admin",
+                        "query": "{ 'updateTime' : { $lt: new Date($yyyy,$MM,$dd,$HH) }}",
+                        "column": [
+                            {
+                                "name": "_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "doctorUserInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentConsultationSheetId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "couponNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "groupId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "preFilledInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "source",
+                                "type": "string"
+                            },
+                            {
+                                "name": "inquiryType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "state",
+                                "type": "string"
+                            },
+                            {
+                                "name": "endType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "replyState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "commentInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userImpression",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "symptomType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receptionTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "responseTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "endTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "appealInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "stage",
+                                "type": "string"
+                            },
+                            {
+                                "name": "followUpStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "diagnosisStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            }
+                        ],
+                        "dbName": "interaction_cpp_customer_tool",
+                        "userName": "$mongodbusername",
+                        "userPassword": "$mongodbpassword"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "doctorUserInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "parentConsultationSheetId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "couponNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "groupId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "preFilledInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "source",
+                                "type": "string"
+                            },
+                            {
+                                "name": "inquiryType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "state",
+                                "type": "string"
+                            },
+                            {
+                                "name": "endType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "replyState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "commentInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "userImpression",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "symptomType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "receptionTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "responseTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "endTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "appealInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "stage",
+                                "type": "string"
+                            },
+                            {
+                                "name": "followUpStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "diagnosisStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "consultation_sheet",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mongo/interaction_cpp_customer_tool/consultation_sheet/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 2
+            }
+        }
+    },
+    "core": {
+        "transport": {
+            "channel": {
+                "speed": {
+                    "record": 20000,
+                    "byte": 2097152
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+_id,ObjectId,None
+userId,String,None
+followNum,Long,None
+fansNum,Long,None
+robotFansNum,Long,None
+fakeFollowNum,Long,None
+totalFansNum,Long,None
+totalFollowNum,Long,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None

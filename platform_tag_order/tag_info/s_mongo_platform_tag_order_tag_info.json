@@ -1,0 +1,150 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader",
+                    "parameter": {
+                        "address": [
+                            "$mongodburl"
+                        ],
+                        "collectionName": "tag_info",
+                        "authDb": "admin",
+                        "query": "{ 'updateTime' : { $lt: new Date($yyyy,$MM,$dd,$HH) }}",
+                        "column": [
+                            {
+                                "name": "_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagIcon",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sort",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagCategoryId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagCategoryName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "releaseStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "isOperation",
+                                "type": "string"
+                            },
+                            {
+                                "name": "creator",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            }
+                        ],
+                        "dbName": "platform_tag_order",
+                        "userName": "$mongodbusername",
+                        "userPassword": "$mongodbpassword"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagIcon",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sort",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagCategoryId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tagCategoryName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "releaseStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "isOperation",
+                                "type": "string"
+                            },
+                            {
+                                "name": "creator",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "tag_info",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mongo/platform_tag_order/tag_info/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

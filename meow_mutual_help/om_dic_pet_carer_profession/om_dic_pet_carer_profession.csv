@@ -1,0 +1,8 @@
+profession_id,bigint(20),id
+alias_name,varchar(20),别名
+profession_name,varchar(10),职业名称
+profession_icon,varchar(128),职业图片
+profession_description,varchar(140),职业描述
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+create_time,datetime,创建时间
+update_time,datetime,修改时间

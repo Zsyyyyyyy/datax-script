@@ -1,0 +1,294 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader",
+                    "parameter": {
+                        "address": [
+                            "$mongodburl"
+                        ],
+                        "collectionName": "general_product",
+                        "authDb": "admin",
+                        "query": "{ 'updateTime' : { $lt: new Date($yyyy,$MM,$dd) }}",
+                        "column": [
+                            {
+                                "name": "_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "title",
+                                "type": "string"
+                            },
+                            {
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productCategory",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopCustomCategory",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shop",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productTags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productPictureProductObjectStorags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productDetailText",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productDetailObjectStorages",
+                                "type": "string"
+                            },
+                            {
+                                "name": "buyNotes",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reservationNotes",
+                                "type": "string"
+                            },
+                            {
+                                "name": "expiryDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sn",
+                                "type": "string"
+                            },
+                            {
+                                "name": "saleState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "putOnSaleDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auditState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "approvedDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "specialOfferState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reviewReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "generalAttribute",
+                                "type": "string"
+                            },
+                            {
+                                "name": "geoJsonPoint",
+                                "type": "string"
+                            },
+                            {
+                                "name": "brandSnapshot",
+                                "type": "string"
+                            },
+                            {
+                                "name": "purchaseRules",
+                                "type": "string"
+                            },
+                            {
+                                "name": "purchaseRestrictions",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productSortInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "kindTips",
+                                "type": "string"
+                            }
+                        ],
+                        "dbName": "platform_product_management",
+                        "userName": "$mongodbusername",
+                        "userPassword": "$mongodbpassword"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "title",
+                                "type": "string"
+                            },
+                            {
+                                "name": "description",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productCategory",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopCustomCategory",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shop",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productTags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productPictureProductObjectStorags",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productDetailText",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productDetailObjectStorages",
+                                "type": "string"
+                            },
+                            {
+                                "name": "buyNotes",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reservationNotes",
+                                "type": "string"
+                            },
+                            {
+                                "name": "expiryDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sn",
+                                "type": "string"
+                            },
+                            {
+                                "name": "saleState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "putOnSaleDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auditState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "approvedDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "specialOfferState",
+                                "type": "string"
+                            },
+                            {
+                                "name": "reviewReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateDate",
+                                "type": "string"
+                            },
+                            {
+                                "name": "delFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "generalAttribute",
+                                "type": "string"
+                            },
+                            {
+                                "name": "geoJsonPoint",
+                                "type": "string"
+                            },
+                            {
+                                "name": "brandSnapshot",
+                                "type": "string"
+                            },
+                            {
+                                "name": "purchaseRules",
+                                "type": "string"
+                            },
+                            {
+                                "name": "purchaseRestrictions",
+                                "type": "string"
+                            },
+                            {
+                                "name": "productSortInfo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "kindTips",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "general_product",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mongo/platform_product_management/general_product/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

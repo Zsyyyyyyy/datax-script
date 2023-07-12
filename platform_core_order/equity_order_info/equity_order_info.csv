@@ -1,0 +1,99 @@
+_id,String,订单id
+version,Long,None
+orderNo,String,订单编号
+businessIdentifier,BusinessIdentifier,业务线
+orderType,String,订单类型，{@link com.meow.platform.enums.order.OrderType}
+subOrderType,String,"{@link EquitySubOrderType}
+      子订单类型
+      当orderType = EQ"
+parentFlag,String,父子订单，1：父订单 0：子订单 （默认1）
+parentOrderNo,String,父订单编号
+shopId,String,店铺id
+shopCode,String,所属店铺
+shopName,String,店铺名称
+shopAvatar,String,店铺头像
+merchantCode,String,商家代码
+merchantType,String,商家类型 {@link com.meow.platform.enums.merchant.MerchantType}
+merchantId,String,商家id
+merchantUserId,String,商家所属用户id
+merchantUserAvatar,String,商家用户头像
+merchantName,String,商家用户名称
+merchantPhone,String,商家联系电话
+merchantLevel,String,商家级别
+userId,String,购买用户id
+userName,String,购买用户名称
+userAvatar,String,购买用户头像
+orderChannel,String,订单渠道，IOS：IOS，ANDROID：安卓 {@link com.meow.platform.enums.order
+shippingType,String,配送方式，1：快递，2：门店自提 {@link com.meow.platform.enums.order.Shippi
+shippingAddress,ShippingAddress,订单地址
+logisticsCompanyName,String,物流公司名
+logisticsNo,String,物流单号
+countryCode,String,订单地址国家代码
+provinceCode,String,订单地址省代码
+cityCode,String,市代码
+countyCode,String,区代码
+subdistrictCode,String,地址街道社区代码
+address,String,详细地址
+shipTo,String,收货人
+shipToPhoneNo,String,收货人电话
+payType,String,"参考 {@link OrderPayType}
+      支付方式，WX：微信，ZFB：支付宝， OFFLINE: 线"
+totalPrice,BigDecimal,订单金额
+payAmount,BigDecimal,订单实付金额
+reduceAmount,BigDecimal,优惠金额
+couponInfos,List,优惠券信息
+promotionInfo,String,优惠信息
+deductionAmount,BigDecimal,抵扣金额
+shippingFee,BigDecimal,运费
+transactionNo,String,第三方支付流水号
+payOrderNo,String,支付流水号（order_pay_info中的payOrderInfo）
+userRemark,String,用户下单备注
+userReservedMobile,String,买家手机号（用户预留手机号）
+merchantRemark,String,商家备注
+orderStatus,String,订单状态 10：待支付，100：待接单，110：待服务，120：服务中，130：商家确认完成，140：用户确认完成，15
+commentStatus,String,评价状态 WAIT_COMMENT：未评价 COMMENTED：已评价
+isRefund,Boolean,是否退款，true：已退款，false：未退款
+userCancelReason,String,用户取消原因
+merchantCancelReason,String,商家取消原因
+userDeleteFlag,Boolean,用户删除，true：已删除，false：未删除
+merchantDeleteFlag,Boolean,商家删除，true：已删除，false：未删除
+orderTime,LocalDateTime,下单时间
+orderCancelTime,LocalDateTime,取消时间
+orderPayTime,LocalDateTime,支付时间
+orderReceiveTime,LocalDateTime,接单时间
+merchantConfirmTime,LocalDateTime,商家确认时间
+orderDeliveryTime,LocalDateTime,发货时间
+orderCloseTime,LocalDateTime,交易关闭时间
+orderCompleteTime,LocalDateTime,订单完成时间
+orderRefundTime,LocalDateTime,退款时间
+orderItemList,List,订单项列表
+verifyBrand,String,核销品牌
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间
+shop,ShopInfoRestResponse,店铺信息
+affiliatedShopId,String,挂靠店铺id
+affiliatedShopName,String,挂靠店铺名
+petsNumber,Integer,宠物数量
+baseServicePrice,BigDecimal,基础服务费用(每天)
+baseServiceDistance,Integer,商家设置基础费用包括的服务距离(m)
+baseServicePets,Integer,商家设置的基础费用包括的服务宠物数量
+overServiceDistance,BigDecimal,超出服务距离(km)
+overServiceDistancePrice,BigDecimal,超出服务距离费用(每公里)
+overServicePetsPrice,BigDecimal,超出服务宠物数量加收的费用
+categoryId,String,服务类型， 对应表om_dic_pet_carer_service_category 中的category_id.
+affiliatedUserId,String,挂靠用户Id
+settlementCycle,Integer,结算周期: 订单确认完成， 多久进行结算。 目前是 t+7t+2
+refundAmount,BigDecimal,退款金额
+splitStatus,Integer,None
+splitFailReason,String,None
+splitCallbackTime,LocalDateTime,None
+newCustomerOrder,Boolean,新客户首单
+verifyTime,LocalDateTime,核销时间
+scene,String,"订单场景: 比如在权益卡中有 特价专区， 好物专区
+      {@link com.meow.platform.enu"
+consignmentTaskId,String,批量任务id
+exchangeCode,String,激活码
+exchangeStatus,String,{@link ExchangeStatusEnum}
+effectiveTime,LocalDateTime,None
+exchangeTime,LocalDateTime,None
+taskCreatorId,String,None

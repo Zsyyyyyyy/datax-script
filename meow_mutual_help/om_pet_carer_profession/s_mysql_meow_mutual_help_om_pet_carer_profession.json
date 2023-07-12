@@ -1,0 +1,101 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select pet_carer_profession_id,pet_carer_id,dic_profession_id,dic_profession_garde_id,profession_garde_type,auth_status,auth_pass_time,effective_status,del_flag,create_time,update_time from $table_name where update_time < '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "om_pet_carer_profession",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "pet_carer_profession_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "pet_carer_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "dic_profession_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "dic_profession_garde_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "profession_garde_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auth_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auth_pass_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "effective_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "om_pet_carer_profession",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/om_pet_carer_profession/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

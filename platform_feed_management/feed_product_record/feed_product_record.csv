@@ -1,0 +1,8 @@
+_id,ObjectId,ID
+feedId,String,动态id
+creatorId,String,创建者id
+feedProductId,String,动态商品ID，对应的是 feed_product 表的主键id
+associationStatus,String,关联状态:关联中，解除关联 {@link FeedProductRecordAssociationStatusEnum}
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间
+delFlag,Boolean,删除标识

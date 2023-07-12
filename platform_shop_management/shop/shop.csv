@@ -1,0 +1,59 @@
+_id,String,店铺id
+shopCode,Long,店铺code
+userId,Long,用户id
+merchantId,Long,商家id
+shopName,String,店铺名称
+shopImgs,List,店铺相册 - 照片
+shopVideos,List,店铺相册 - 视频
+coverUrl,String,店铺封面url
+lon,Double,商家具体位置 经度
+lat,Double,商家具体位置 维度
+geoSpatial,GeoJsonPoint,"地理信息 实现规范：RFC 7946 GeoJson
+   
+    @see <a href = ""https:geo"
+geohash,String,geohash编码
+province,String,商家所属省
+provinceCode,String,商家所属省code
+city,String,商家所属城市
+cityCode,String,商家所属省code
+county,String,商家所属区县
+countyCode,String,商家所属区县code
+address,String,商家详细地址
+divisionsCode,String,商家地址行政区划代码 《GBT2260 中华人民共和国行政区划代码》
+serviceTel,String,客服电话
+shopIntroduce,String,店铺介绍
+shopFacility,String,店面设施
+closed,Boolean,是否闭店
+shopType,String,店铺类型{@link com.meow.platform.enums.shop.ShopType}
+shopStatus,String,店铺状态 {@link com.meow.platform.enums.shop.ShopStatus}
+shopAuditStatus,String,店铺审核状态 {@link com.meow.platform.enums.shop.ShopAuditStatus}
+starFlag,Boolean,是否星选
+blankFlag,Boolean,是否黑名单
+recommend,Boolean,是否推荐
+isMeetGift,Boolean,是否预约有礼
+delFlag,Boolean,删除标识
+shopOwnerInfo,ShopOwnerInfo,店铺所属人信息
+shopOpenTime,ShopOpenTime,店铺营业时间 {@link ShopOpenTime}
+shopVip,List,店铺VIP信息 {@link ShopVipInfo}
+businessScopes,List,店铺经营范围（系统分类）
+shopStatisticsInfo,List,店铺统计信息
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,修改时间
+distance,Double,距离
+settlementInfo,ShopSettlementInfo,店铺结算信息
+recommendStartTime,LocalDateTime,None
+recommendEndTime,LocalDateTime,None
+recommendEffectiveDistance,Integer,None
+recommendTransregionalDistance,Integer,None
+isIndependentManagement,Boolean,None
+parentId,String,None
+managerPhone,String,None
+isBindAccount,Boolean,开户状态
+shopAccountType,String,账户类型
+registerReason,String,开通个人户原因
+registerOperateSource,String,开户操作来源
+registerOperateTime,LocalDateTime,开通个人户时间
+registerOperateUser,String,开通操作人员
+companyName,String,公司名称
+usci,String,社会统一信用代码
+legalPersonName,String,法人姓名

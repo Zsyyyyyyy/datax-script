@@ -1,0 +1,326 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mongodbreader",
+                    "parameter": {
+                        "address": [
+                            "$mongodburl"
+                        ],
+                        "collectionName": "order_refund_info",
+                        "authDb": "admin",
+                        "query": "{ 'updateTime' : { $lt: new Date($yyyy,$MM,$dd) }}",
+                        "column": [
+                            {
+                                "name": "_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "afterSaleNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "chainShopWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantContractNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payServiceType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gatePaySerialNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gateRefundNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingRefundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gateRefundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundApplyUser",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundSource",
+                                "type": "string"
+                            },
+                            {
+                                "name": "fullRefundFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "totalMarketingAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingInfos",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundCompleteTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            }
+                        ],
+                        "dbName": "platform_core_order",
+                        "userName": "$mongodbusername",
+                        "userPassword": "$mongodbpassword"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "afterSaleNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payOrderNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundStatus",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payUserName",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantUserId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "chainShopWalletId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "merchantContractNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "shopId",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "payServiceType",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gatePaySerialNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gateRefundNo",
+                                "type": "string"
+                            },
+                            {
+                                "name": "orderAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingRefundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gateRefundAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundApplyUser",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundSource",
+                                "type": "string"
+                            },
+                            {
+                                "name": "fullRefundFlag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundReason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "totalMarketingAmount",
+                                "type": "string"
+                            },
+                            {
+                                "name": "marketingInfos",
+                                "type": "string"
+                            },
+                            {
+                                "name": "refundCompleteTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "createTime",
+                                "type": "string"
+                            },
+                            {
+                                "name": "updateTime",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "order_refund_info",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mongo/platform_core_order/order_refund_info/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

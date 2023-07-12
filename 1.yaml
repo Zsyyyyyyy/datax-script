@@ -1,0 +1,13 @@
+mongodb:
+  ip: dds-uf63189e2d0e8e542.mongodb.rds.aliyuncs.com
+  port: 3717
+  username: bigdata_data
+  password: 2aD&3tS8Un9a$yHRBh&j
+hdfs:
+  ip: emr-header-2.cluster-299465
+  port: 8020
+mysql: 
+  ip: pc-uf67e438mp89q7n8m.rwlb.rds.aliyuncs.com
+  port: 3717
+  username: bigdata_datax
+  password: 2aD&3tS8Un9a$yHRBh&j

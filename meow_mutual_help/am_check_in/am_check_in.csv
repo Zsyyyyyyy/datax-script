@@ -1,0 +1,9 @@
+id,bigint(20) unsigned,主键id
+activity_no,varchar(32),活动编号
+user_id,bigint(20),用户id
+day,varchar(16),签到日期 yyyy-MM-dd
+daily_count,int(10),连续签到天数
+is_award,int(1),是否领取过当前签到的奖励  1领取过  0否
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+create_time,datetime,创建时间
+update_time,datetime,修改时间

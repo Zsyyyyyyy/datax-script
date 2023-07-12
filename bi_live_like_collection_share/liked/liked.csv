@@ -1,0 +1,11 @@
+_id,ObjectId,None
+sourceType,SourceType,None
+sourceId,String,None
+likeType,LikeType,None
+likedId,String,None
+commentLevel,CommentLevel,None
+auditFlag,Boolean,None
+oldInfo,LikedOldInfo,None
+oldId,Long,None
+createTime,LocalDateTime,None
+updateTime,LocalDateTime,None

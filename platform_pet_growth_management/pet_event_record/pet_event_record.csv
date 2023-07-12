@@ -1,0 +1,21 @@
+_id,String,None
+userId,String,用户Id
+petId,String,宠物Id
+type,String,类型：提醒-REMIND、日常-DAILY、记账-BILL、病例-CASE、记事-THING
+mark,String,类目标识字段
+itemId,String,item_info主键ID
+title,String,标题
+desc,String,描述
+images,List,图片列表
+recordTime,LocalDateTime,记录时间
+weight,Double,宠物体重
+healthyInfo,HealthyInfo,健康信息
+amount,Double,记账金额
+finishStatus,Integer,完成状态：0-未完成 1-已完成
+remindStatus,Integer,提醒状态：0-待提醒 1-已提醒
+feedId,String,关联的动态Id
+syncId,Long,t_pet_record 主键Id
+delFlag,Boolean,删除标识
+finishTime,LocalDateTime,完成时间
+createTime,LocalDateTime,创建时间
+updateTime,LocalDateTime,更新时间

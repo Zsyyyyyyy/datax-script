@@ -1,0 +1,12 @@
+advertiser_id,varchar(16),广告主ID
+date,datetime,日期
+balance,varchar(255),日终结余(单位元）
+cash_cost,varchar(255),现金支出(单位元)
+cost,varchar(255),总支出(单位元)
+frozen,varchar(255),冻结(单位元)
+income,varchar(255),总存入(单位元)
+reward_cost,varchar(255),赠款支出(单位元)
+shared_wallet_cost,varchar(255),共享钱包支出（单位元）
+transfer_in,varchar(255),总转入(单位元)
+transfer_out,varchar(255),总转出(单位元)
+ts,datetime,

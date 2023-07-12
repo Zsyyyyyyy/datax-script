@@ -1,0 +1,27 @@
+_id,ObjectId,id
+sourceType,CommentSourceTypeEnum,数据类型 （动态、商品订单、服务订单）
+sourceId,String,来源id （动态的id、商品订单id、服务订单id）
+anonymity,Boolean,是否匿名
+sourceUserId,String,发表评论人id
+sourceUserAvatar,String,发表评论人头像
+sourceUserNick,String,发表评论人昵称
+content,String,发表评论内容
+imageList,List,图片列表
+videoList,List,视频列表
+createTime,LocalDateTime,发表时间
+updateTime,LocalDateTime,更新时间
+auditType,CommentAuditTypeEnum,审核类型（机审、人工审核）
+auditState,CommentAuditStateEnum,审核状态 (审核中、审核失败、审核成功)
+complaintState,ComplaintStateEnum,申诉状态（申诉中、申诉失败、申诉成功）
+delFlag,Boolean,delFlag
+sticky,Boolean,是否置顶
+stickyDateTime,LocalDateTime,置顶时间
+quality,Boolean,是否优质
+extra,CommentSourceTypeExtra,扩展字段
+commentReplies,List,评论回复列表
+oldId,Long,老数据ID
+authorComment,Boolean,是否是作者自己的一级评论
+authorInteractComment,Boolean,作者参与回复或点赞的评论
+authorReplyComment,Boolean,作者回复过的评论
+authorLikeComment,Boolean,作者点赞过的评论
+likeCount,Long,点赞数量

@@ -1,0 +1,43 @@
+merchant_id,bigint(20),商家id
+user_id,bigint(20),用户id
+merchant_name,varchar(128),商家名称
+avatar_url,varchar(256),商家头像
+background_pic_url,varchar(256),背景图片url
+description,varchar(1024),商家介绍
+company_name,varchar(128),公司名称
+business_license_url,varchar(256),营业执照url
+usci,varchar(128),社会统一信用代码
+legal_person_name,varchar(32),法人姓名
+idcard_no,varchar(32),身份证号码
+lon,"decimal(10,7)",商家具体位置 经度
+lat,"decimal(10,7)",商家具体位置 维度
+geohash,varchar(32),geohash编码
+province,varchar(32),商家所属省
+province_code,varchar(20),商家所属省code
+city,varchar(32),商家所属城市
+city_code,varchar(20),商家所属省code
+county,varchar(32),商家所属区县
+county_code,varchar(20),商家所属区县code
+AdministrativeDivisionsCode,varchar(20),行政区划代码
+address,varchar(256),商家详细地址
+service_tel,varchar(64),客服电话
+merchant_status,varchar(10),商家状态
+merchant_type,varchar(20),商家类型
+audit_status,varchar(10),认证状态
+del_flag,tinyint(1),删除表示 1：删除 0：未删除
+create_time,datetime,创建时间
+create_user,varchar(128),创建人名称
+update_time,datetime,修改时间
+update_user,varchar(128),修改人名称
+idcard_front_img_url,varchar(256),身份证正面url
+idcard_back_img_url,varchar(256),身份证反面url
+remark,varchar(255),备注
+audit_time,datetime,审核时间
+partner_id,bigint(20),合伙人ID
+old_merchant_id,bigint(20),老表对应ID
+merchant_account_type,varchar(20),商家账户类型
+register_operate_source,varchar(100),开户操作来源
+register_operate_user,varchar(20),开户操作人
+register_operate_time,datetime,开户操作时间
+register_reason,varchar(500),开通个人户原因
+head_shop_id,varchar(100),总店id

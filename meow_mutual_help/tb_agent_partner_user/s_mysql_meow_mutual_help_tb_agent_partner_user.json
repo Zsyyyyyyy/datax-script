@@ -1,0 +1,173 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select agent_partner_user_id,phone,real_name,nickname,partner_password,avatar,age,email,gender,idcard_no,idcard_front_url,idcard_back_url,province,province_code,city,city_code,county,county_code,region,partner_level,partner_source,partner_status,login_ip,login_time,del_flag,create_time,update_time,create_user,update_user from $table_name where update_time < '$bizdate'"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "tb_agent_partner_user",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "agent_partner_user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "phone",
+                                "type": "string"
+                            },
+                            {
+                                "name": "real_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "nickname",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partner_password",
+                                "type": "string"
+                            },
+                            {
+                                "name": "avatar",
+                                "type": "string"
+                            },
+                            {
+                                "name": "age",
+                                "type": "string"
+                            },
+                            {
+                                "name": "email",
+                                "type": "string"
+                            },
+                            {
+                                "name": "gender",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_front_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "idcard_back_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "region",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partner_level",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partner_source",
+                                "type": "string"
+                            },
+                            {
+                                "name": "partner_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "login_ip",
+                                "type": "string"
+                            },
+                            {
+                                "name": "login_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_user",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_user",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "tb_agent_partner_user",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/tb_agent_partner_user/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "hzcppprod",
+                            "dfs.ha.namenodes.hzcppprod": "prod01,prod02,prod03",
+                            "dfs.namenode.rpc-address.hzcppprod.prod01": "prod01:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod02": "prod02:8020",
+                            "dfs.namenode.rpc-address.hzcppprod.prod03": "prod03:8020",
+                            "dfs.client.failover.proxy.provider.hzcppprod": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": "1"
+            }
+        }
+    }
+}

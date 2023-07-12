@@ -1,0 +1,13 @@
+id,bigint(20),
+task_id,bigint(20),任务id
+user_id,bigint(20),用户id
+biz_id,varchar(128),业务id
+task_title,varchar(128),任务名
+score,int(10),积分值
+score_status,tinyint(1),积分状态 1、待领取  2、已领取  3、积分消费  4、积分退还
+deduct_type,tinyint(2),扣除类型  0、非扣除    1、订单
+receive_time_day,varchar(16),领取日 yyyy-MM-dd
+receive_time,datetime,领取时间
+del_flag,tinyint(1),删除标识 1：删除 0：未删除
+create_time,datetime,创建时间
+update_time,datetime,修改时间

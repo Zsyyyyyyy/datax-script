@@ -1,0 +1,4 @@
+dbType,dbName,tblName
+mysql,meow_mutual_help,um_user
+mysql,meow_mutual_help,um_user_info
+mongodb,platform_feed_management,feed

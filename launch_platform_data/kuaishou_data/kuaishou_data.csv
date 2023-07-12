@@ -1,0 +1,13 @@
+advertiser_id,varchar(16),广告主ID
+date,datetime,
+direct_rebate_real_charged,varchar(16),激励花费(广告主激励账户中余额的消耗，单位：元)
+real_recharged,varchar(16),充值转入(	单位：元)
+contract_rebate_real_charged,varchar(16),框返花费(	年框广告主的框架返点的消耗，单位：元)
+daily_transfer_out,varchar(16),转出(单位：元)
+balance,varchar(16),日终结余(单位：元)
+daily_charge,varchar(16),总花费(单位：元)
+direct_rebate_real_recharged,varchar(16),激励转入(单位：元)
+real_charged,varchar(16),充值花费(广告主的现金消耗和返点消耗，单位：元)
+daily_transfer_in,varchar(16),转入(单位：元)
+contract_rebate_real_recharged,varchar(16),框返转入(	单位：元)
+ts,datetime,

@@ -1,0 +1,179 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select user_id,real_name,id_no,id_type,auth_type,hand_id_url,id_front_url,id_back_url,lon,lat,province,province_code,city,city_code,county,county_code,geohash,area_code,address,auth_status,fail_reason,create_time,update_time,del_flag,mig_flag,sex,change_bind_flag,certificate_validity from $table_name"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "um_user_certification",
+                        "dbName": "meow_mutual_help"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "user_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "real_name",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id_no",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auth_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "hand_id_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id_front_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "id_back_url",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lon",
+                                "type": "string"
+                            },
+                            {
+                                "name": "lat",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province",
+                                "type": "string"
+                            },
+                            {
+                                "name": "province_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city",
+                                "type": "string"
+                            },
+                            {
+                                "name": "city_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county",
+                                "type": "string"
+                            },
+                            {
+                                "name": "county_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "geohash",
+                                "type": "string"
+                            },
+                            {
+                                "name": "area_code",
+                                "type": "string"
+                            },
+                            {
+                                "name": "address",
+                                "type": "string"
+                            },
+                            {
+                                "name": "auth_status",
+                                "type": "string"
+                            },
+                            {
+                                "name": "fail_reason",
+                                "type": "string"
+                            },
+                            {
+                                "name": "create_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "update_time",
+                                "type": "string"
+                            },
+                            {
+                                "name": "del_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "mig_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "sex",
+                                "type": "string"
+                            },
+                            {
+                                "name": "change_bind_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "certificate_validity",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "um_user_certification",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/meow_mutual_help/um_user_certification/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 2
+            }
+        }
+    },
+    "core": {
+        "transport": {
+            "channel": {
+                "speed": {
+                    "record": 20000,
+                    "byte": 2097152
+                }
+            }
+        }
+    }
+}
