@@ -1,0 +1,8 @@
+advertiser_id,varchar(255),
+date,varchar(255),记录产生时间-毫秒级时间戳
+datetime,varchar(255),记录产生时间
+account_type,varchar(255),对应请求参数type，账号类型
+balance,varchar(255),余额-在发生收入/支出后的余额单位为毫分（千分之一分），1元=100000毫分;
+expenses,varchar(255),支出金额单位为毫分（千分之一分），1元=100000毫分;
+income,varchar(255),收入金额单位为毫分（千分之一分），1元=100000毫分;
+ts,varchar(255),

@@ -1,0 +1,10 @@
+advertiser_id,varchar(255),
+balance,varchar(255),余额
+cash,varchar(255),现金余额
+bonus_pure,varchar(255),优惠余额
+compen,varchar(255),补偿余额
+coupon,varchar(255),
+bonus,varchar(255),
+invest,varchar(255),
+orderrow,varchar(255),订单行号，该字段仅KA客户返回
+ts,varchar(255),

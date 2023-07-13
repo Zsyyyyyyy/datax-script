@@ -1,0 +1,15 @@
+acc_id,varchar(255),财务ID
+cash_bal,varchar(255),现金余额(分)
+cash_lock_bal,varchar(255),现金账户锁定余额(分)
+cash_cost,varchar(255),现金账户消耗(分)
+rebate_bal,varchar(255),返回账户余额(分)
+rebate_cost,varchar(255),返回账户消耗(分)
+vir_bal,varchar(255),虚拟账户金额(分)
+vir_cost,varchar(255),虚拟账号消耗(分)
+acc_day_budget,varchar(255),账户日预算设置，预算单位为分
+budget_type,varchar(255),账户日预算类型，0：额度不限
+tomorrow_budget_type,varchar(255),
+acc_day_budget_limit,varchar(255),账户日预算最低限制(分)
+total_balance,varchar(255),总余额值: virBal[赠送余额] + rebateBal[返货余额] + cashBal[现金余额]
+rule_flag,varchar(255),
+ts,varchar(255),

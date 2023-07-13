@@ -1,0 +1,127 @@
+{
+    "job": {
+        "content": [
+            {
+                "reader": {
+                    "name": "mysqlreader",
+                    "parameter": {
+                        "connection": [
+                            {
+                                "jdbcUrl": [
+                                    "jdbc:mysql://$mysqlurl/$database_name?useSSL=false"
+                                ],
+                                "querySql": [
+                                    "select acc_id,cash_bal,cash_lock_bal,cash_cost,rebate_bal,rebate_cost,vir_bal,vir_cost,acc_day_budget,budget_type,tomorrow_budget_type,acc_day_budget_limit,total_balance,rule_flag,ts from $table_name"
+                                ]
+                            }
+                        ],
+                        "username": "$mysqlusername",
+                        "password": "$mysqlpassword",
+                        "collectionName": "oppo_data",
+                        "dbName": "launch_platform_data"
+                    }
+                },
+                "writer": {
+                    "name": "hdfswriter",
+                    "parameter": {
+                        "column": [
+                            {
+                                "name": "acc_id",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cash_bal",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cash_lock_bal",
+                                "type": "string"
+                            },
+                            {
+                                "name": "cash_cost",
+                                "type": "string"
+                            },
+                            {
+                                "name": "rebate_bal",
+                                "type": "string"
+                            },
+                            {
+                                "name": "rebate_cost",
+                                "type": "string"
+                            },
+                            {
+                                "name": "vir_bal",
+                                "type": "string"
+                            },
+                            {
+                                "name": "vir_cost",
+                                "type": "string"
+                            },
+                            {
+                                "name": "acc_day_budget",
+                                "type": "string"
+                            },
+                            {
+                                "name": "budget_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "tomorrow_budget_type",
+                                "type": "string"
+                            },
+                            {
+                                "name": "acc_day_budget_limit",
+                                "type": "string"
+                            },
+                            {
+                                "name": "total_balance",
+                                "type": "string"
+                            },
+                            {
+                                "name": "rule_flag",
+                                "type": "string"
+                            },
+                            {
+                                "name": "ts",
+                                "type": "string"
+                            }
+                        ],
+                        "fieldDelimiter": "\u0001",
+                        "defaultFS": "hdfs://$hdfsurl",
+                        "fileName": "oppo_data",
+                        "fileType": "parquet",
+                        "compress": "snappy",
+                        "path": "/cpp_data/mysql/launch_platform_data/oppo_data/full/",
+                        "writeMode": "nonConflict",
+                        "hadoopConfig": {
+                            "parquet.compression": "SNAPPY",
+                            "hive.exec.compress.output": true,
+                            "mapred.output.compression.codec": "org.apache.hadoop.io.compress.SnappyCodec",
+                            "dfs.nameservices": "$namespace",
+                            "dfs.ha.namenodes.$namespace": "$host01,$host02,$host03",
+                            "dfs.namenode.rpc-address.$namespace.$host01": "$host01:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host02": "$host02:8020",
+                            "dfs.namenode.rpc-address.$namespace.$host03": "$host03:8020",
+                            "dfs.client.failover.proxy.provider.$namespace": "org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider"
+                        }
+                    }
+                }
+            }
+        ],
+        "setting": {
+            "speed": {
+                "channel": 2
+            }
+        }
+    },
+    "core": {
+        "transport": {
+            "channel": {
+                "speed": {
+                    "record": 20000,
+                    "byte": 2097152
+                }
+            }
+        }
+    }
+}

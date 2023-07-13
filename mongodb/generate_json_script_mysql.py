@@ -14,10 +14,15 @@ def generate_table_column_info_mysql(database_name,table_name,csv_output_dir):
     l = []
     columns=['column_name','column_type','comment']
     client = pymysql.connect(
-        host="cn-test01-db.mysql.polardb.rds.aliyuncs.com"
+        # host="cn-test01-db.mysql.polardb.rds.aliyuncs.com"
+        # ,port=3306
+        # ,user="hhkj"
+        # ,passwd="bfr0crg7UVD7ckj-kbr"
+        # ,database=str(database_name))
+        host="prod01"
         ,port=3306
-        ,user="hhkj"
-        ,passwd="bfr0crg7UVD7ckj-kbr"
+        ,user="root"
+        ,passwd="hzCppBigDataProd01"
         ,database=str(database_name))
     cursor = client.cursor()
     sql = "select COLUMN_NAME,COLUMN_TYPE, COLUMN_COMMENT from information_schema.COLUMNS where table_name = '{}';".format(table_name)
@@ -115,8 +120,8 @@ def generate_hive_ods_create_table(table_name, sql_output_dir,database_name):
     print("建表语句已生成")
 
 if __name__ == '__main__':
-    database_name = "meow_mutual_help"
-    table_name = "um_user_certification"
+    database_name = "launch_platform_data"
+    table_name = "vivo_data"
     output_dir="./{}/{}/".format(database_name,table_name)
     
     if (os.path.exists(output_dir) != True):

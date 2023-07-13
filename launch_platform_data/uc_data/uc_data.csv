@@ -1,0 +1,7 @@
+account_id,varchar(255),
+user_id,varchar(255),User ID
+user_name,varchar(255),账户名称
+budget,varchar(255),账户每日预算，单位：元
+balance,varchar(255),账户余额
+pay_amount,varchar(255),安心赔付余额，单位：元
+ts,varchar(255),
