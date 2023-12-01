@@ -100,5 +100,3 @@ on t2.group_id = t3.target_ry_id
 where content is not null
 
 limit 100;
-
-
