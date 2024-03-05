@@ -1,0 +1,46 @@
+
+
+
+
+select 
+    qa_id,
+    max(qa_type) as qa_type,
+    max(user_name) as user_name,
+    max(room_id) as room_id,
+    max(if(role = 'user', event_time,null)) as q_time,
+    max(if(role = 'user', content,null)) as question,
+    max(if(role = 'system', event_time,null)) as a_time,
+    max(if(role = 'system', content,null)) as answer,
+    max(if(isQuick is true, '知识库',null)) as isQuick
+from
+(
+    select 
+        qa_id,
+        if(qa_type=1,'私聊','群聊') as qa_type,
+        user_name,
+        room_id,
+        role,
+        content,
+        get_json_object(chatGPTLogContext, '$.isQuick') as isQuick,
+        event_time
+    from 
+    (
+       select 
+            qa_id,
+            user_name,
+            room_id,
+            role,
+            content,
+            qa_type,
+            get_json_object(context,'$.chatGPTLogContext') as chatGPTLogContext,
+            from_unixtime(int(event_timestamp / 1000)) as event_time
+        from s_mysql_oc_aigc_user_chat_record 
+        where ds = '20240301'
+        and date_format(create_time, 'yyyy-MM-dd') >= '2024-01-01' 
+        and date_format(create_time, 'yyyy-MM-dd') <= '2024-03-30' 
+        and qa_id is not null
+      
+    )t
+)t group by qa_id order by user_name,room_id,q_time
+
+;
